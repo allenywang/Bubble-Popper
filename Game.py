@@ -11,10 +11,10 @@ class Bubble(pygame.sprite.Sprite):
 
     BLUE_SPRITE = "img/KellyBall.png"
     RED_SPRITE = "img/StellaBall.png"
-    GREEN_SPRITE = "img/KellyBall.png"
-    YELLOW_SPRITE = "img/KellyBall.png"
-    ORANGE_SPRITE = "img/KellyBall.png"
-    PURPLE_SPRITE = "img/KellyBall.png"
+    GREEN_SPRITE = "img/JustinBall.png"
+    YELLOW_SPRITE = "img/MatthewBall.png"
+    ORANGE_SPRITE = "img/ElizabethBall.png"
+    PURPLE_SPRITE = "img/RyanBall.png"
 
     CENTER = [350, 510]
 
@@ -103,7 +103,6 @@ class Board():
     """
     WIDTH, HEIGHT = 480, 720
     BACKGROUND = "img/GrassyField.png"
-    FOREGROUND = "img/GrassyFieldForeground.png"
 
     def __init__(self):
         """
@@ -116,7 +115,6 @@ class Board():
         self.screen = pygame.display.set_mode((self.WIDTH, self.HEIGHT), 0, 32)
         self.sprites = pygame.sprite.Group()
         self.shooter = Shooter()
-        self.foreground = pygame.image.load(self.FOREGROUND)
         pygame.display.flip()
 
     def update_sprites(self, current_bubble):
@@ -130,7 +128,6 @@ class Board():
         for sprite in self.sprites:
             self.screen.blit(sprite.image, sprite.rect)
         self.screen.blit(self.shooter.image, self.shooter.rect)
-        self.screen.blit(self.foreground, (0, 0))
         pygame.display.flip()
 
     def main(self):
